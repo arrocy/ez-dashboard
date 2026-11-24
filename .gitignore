@@ -43,6 +43,7 @@ _ide_helper.php
 AGENTS.md
 boost.json
 CLAUDE.md
+composer.lock
 supervisor.conf
 Homestead.json
 Homestead.yaml

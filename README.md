@@ -8,10 +8,10 @@ Arrocy EZ Dashboard is a Laravel admin panel with a modular package structure. T
 - User and administrator management
 - Application settings and file management
 - Modular add-ons, maintained as Composer packages:
-  - **WhatsApp** (`arrocy/whatsapp`)
-  - **Phonebook** (`arrocy/phonebook`)
   - **AI Bot** (`arrocy/ai-bot`)
+  - **Phonebook** (`arrocy/phonebook`)
   - **Templates** (`arrocy/template`)
+  - **WhatsApp** (`arrocy/whatsapp`)
 
 The add-on packages are in `arrocy/` and are registered with Laravel through Composer package discovery.
 
@@ -28,11 +28,9 @@ There is no browser-based installer. Configure the application and database from
 
 1. Create your local environment file:
 
-   ```powershell
-   Copy-Item .env.example .env
+   ```sh
+   cp .env.example .env
    ```
-
-   On macOS or Linux, use `cp .env.example .env`.
 
 2. Edit `.env` and set `APP_NAME`, `APP_URL`, and your database connection. The default SQLite connection uses `database/database.sqlite`; leave `DB_DATABASE` unset to use that path. If using MySQL, create the database before continuing and enter its connection details.
 
@@ -86,11 +84,9 @@ php artisan migrate
 | Path | Contents |
 | --- | --- |
 | `app/` | Core Laravel application code |
-| `arrocy/` | Arrocy add-on Composer packages |
 | `database/` | Migrations, factories, and seeders |
 | `resources/` | Blade views, CSS, and JavaScript |
 | `routes/` | Web, API, and console routes |
-| `tests/` | PHPUnit feature and unit tests |
 
 ## Configuration
 
