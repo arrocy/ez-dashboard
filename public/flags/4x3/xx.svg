@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-xx" viewBox="0 0 640 480">
+  <rect width="640" height="480" fill="#fff" stroke="#adb5bd" stroke-width="1.1"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-size="400" font-weight="bold" fill="#adb5bd" font-family="Arial, sans-serif">
+    ??
+  </text>
+</svg>
+
