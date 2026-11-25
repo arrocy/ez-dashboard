@@ -67,10 +67,10 @@ composer config repositories.ez-whatsapp vcs https://github.com/arrocy/ez-whatsa
 Install add-on packages with Composer:
 
 ```sh
-composer require arrocy/ai-bot:ez-dev-main
-composer require arrocy/phonebook:ez-dev-main
-composer require arrocy/template:ez-dev-main
-composer require arrocy/whatsapp:ez-dev-main
+composer require arrocy/ez-ai-bot:dev-main
+composer require arrocy/ez-phonebook:dev-main
+composer require arrocy/ez-template:dev-main
+composer require arrocy/ez-whatsapp:dev-main
 ```
 
 Migrate the database for the add-on packages:
