@@ -110,12 +110,12 @@
                                 </div>
                                 <div class="welcome-module-row">
                                     <span class="welcome-module-icon text-primary"><i class="fa-solid fa-address-book"></i></span>
-                                    <span class="flex-grow-1 fw-medium">Phonebook</span>
+                                    <span class="flex-grow-1 fw-medium">Phonebooks</span>
                                     <span class="welcome-module-status"><span></span>Active</span>
                                 </div>
                                 <div class="welcome-module-row">
                                     <span class="welcome-module-icon text-warning"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                                    <span class="flex-grow-1 fw-medium">AI Bot</span>
+                                    <span class="flex-grow-1 fw-medium">AI Bots</span>
                                     <span class="welcome-module-status"><span></span>Active</span>
                                 </div>
                                 <div class="welcome-module-row">
