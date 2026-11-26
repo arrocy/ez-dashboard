@@ -8,10 +8,10 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-// Usage: php artisan arrocy:package {name}
-#[Signature('arrocy:package {name : The name of the package (e.g., support)}')]
-#[Description('Create a uniform CRUD boilerplate for an Arrocy package')]
-class CreateArrocyPackage extends Command
+// Usage: php artisan arrocy:plugin {name}
+#[Signature('arrocy:plugin {name : The name of the plugin (e.g., support)}')]
+#[Description('Create a uniform CRUD boilerplate for Arrocy EZ Dashboard')]
+class CreateArrocyPlugin extends Command
 {
     public function handle(): int
     {
@@ -22,12 +22,12 @@ class CreateArrocyPackage extends Command
             ->toString();
 
         if ($cleanName === '') {
-            $this->error('Provide a package name containing letters or numbers.');
+            $this->error('Provide a plugin name containing letters or numbers.');
 
             return Command::FAILURE;
         }
 
-        $packageName = "ez-{$cleanName}";
+        $pluginName = "ez-{$cleanName}";
         $className = Str::studly($cleanName);
         $tableName = 'ez_'.Str::snake(Str::pluralStudly($className));
         $recordName = Str::camel($cleanName);
@@ -37,10 +37,10 @@ class CreateArrocyPackage extends Command
             $recordsName .= 'Records';
         }
 
-        $packagePath = base_path("arrocy/{$packageName}");
+        $pluginPath = base_path("arrocy/{$pluginName}");
 
-        if (File::exists($packagePath)) {
-            $this->error("Package 'arrocy/{$packageName}' already exists!");
+        if (File::exists($pluginPath)) {
+            $this->error("Plugin 'arrocy/{$pluginName}' already exists!");
 
             return Command::FAILURE;
         }
@@ -57,31 +57,31 @@ class CreateArrocyPackage extends Command
         ];
 
         foreach ($directories as $directory) {
-            File::makeDirectory("{$packagePath}\\{$directory}", 0755, true, true);
+            File::makeDirectory("{$pluginPath}\\{$directory}", 0755, true, true);
         }
 
         $files = [
-            "{$packagePath}\\composer.json" => $this->getComposerStub($packageName, $className),
-            "{$packagePath}\\config\\{$cleanName}.php" => $this->getConfigStub(),
-            "{$packagePath}\\src\\{$className}ServiceProvider.php" => $this->getServiceProviderStub($cleanName, $className),
-            "{$packagePath}\\src\\Models\\{$className}.php" => $this->getModelStub($tableName, $className),
-            "{$packagePath}\\src\\Http\\Controllers\\{$className}Controller.php" => $this->getControllerStub(
+            "{$pluginPath}\\composer.json" => $this->getComposerStub($pluginName, $className),
+            "{$pluginPath}\\config\\{$cleanName}.php" => $this->getConfigStub(),
+            "{$pluginPath}\\src\\{$className}ServiceProvider.php" => $this->getServiceProviderStub($cleanName, $className),
+            "{$pluginPath}\\src\\Models\\{$className}.php" => $this->getModelStub($tableName, $className),
+            "{$pluginPath}\\src\\Http\\Controllers\\{$className}Controller.php" => $this->getControllerStub(
                 $cleanName,
                 $className,
                 $recordName,
                 $recordsName,
             ),
-            "{$packagePath}\\database\\migrations\\0001_01_03_000010_create_{$tableName}_table.php" => $this->getMigrationStub($tableName),
-            "{$packagePath}\\database\\seeders\\DatabaseSeeder.php" => $this->getDatabaseSeederStub($className),
-            "{$packagePath}\\routes\\web.php" => $this->getWebRoutesStub($cleanName, $className, $recordName),
-            "{$packagePath}\\routes\\api.php" => $this->getApiRoutesStub($cleanName),
-            "{$packagePath}\\resources\\views\\index.blade.php" => $this->getIndexStub(
+            "{$pluginPath}\\database\\migrations\\0001_01_03_000010_create_{$tableName}_table.php" => $this->getMigrationStub($tableName),
+            "{$pluginPath}\\database\\seeders\\DatabaseSeeder.php" => $this->getDatabaseSeederStub($className),
+            "{$pluginPath}\\routes\\web.php" => $this->getWebRoutesStub($cleanName, $className, $recordName),
+            "{$pluginPath}\\routes\\api.php" => $this->getApiRoutesStub($cleanName),
+            "{$pluginPath}\\resources\\views\\index.blade.php" => $this->getIndexStub(
                 $cleanName,
                 $className,
                 $recordName,
                 $recordsName,
             ),
-            "{$packagePath}\\resources\\views\\edit.blade.php" => $this->getEditStub(
+            "{$pluginPath}\\resources\\views\\edit.blade.php" => $this->getEditStub(
                 $cleanName,
                 $className,
                 $recordName,
@@ -92,11 +92,11 @@ class CreateArrocyPackage extends Command
             File::put($path, $content);
         }
 
-        $this->info("Package boilerplate structured successfully: arrocy/{$packageName}");
+        $this->info("Plugin boilerplate structured successfully: arrocy/{$pluginName}");
         $this->warn("\nNext steps:");
         $this->line('1. Add this to the main composer.json repositories block:');
         $this->line('   { "type": "path", "url": "arrocy/*" }');
-        $this->line("2. Run: composer require arrocy/{$packageName}:dev-main");
+        $this->line("2. Run: composer require arrocy/{$pluginName}:dev-main");
         $this->line('3. Run: php artisan migrate');
         $this->line("4. Run: php artisan db:seed --class=Arrocy\\{$className}\\Database\\Seeders\\DatabaseSeeder");
 
@@ -107,7 +107,9 @@ class CreateArrocyPackage extends Command
     {
         return json_encode([
             'name' => "arrocy/{$name}",
-            'description' => "{$class} package for arrocy/ez-dashboard ecosystem.",
+            'type' => 'library',
+            'description' => "{$class} plugin for arrocy/ez-dashboard ecosystem.",
+            'license' => 'GPL-2.0-or-later',
             'autoload' => [
                 'psr-4' => [
                     "Arrocy\\{$class}\\" => 'src/',
@@ -316,7 +318,7 @@ PHP;
 use Illuminate\\Support\\Facades\\Route;
 
 Route::middleware(['api'])->prefix('api/{$name}')->name('{$name}.api.')->group(function (): void {
-    // Add package API routes here.
+    // Add plugin API routes here.
 });
 PHP;
     }

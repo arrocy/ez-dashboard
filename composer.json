@@ -1,10 +1,10 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "arrocy/ez-dashboard",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "Simple and Easy Admin Panel Dashboard with plugin addons.",
     "keywords": ["laravel", "framework"],
-    "license": "MIT",
+    "license": "GPL-2.0-or-later",
     "require": {
         "php": "^8.3",
         "lab404/laravel-impersonate": "^1.7",

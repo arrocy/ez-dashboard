@@ -53,7 +53,7 @@ There is no browser-based installer. Configure the application and database from
 
 5. Configure `MAIL_*` values in `.env` if the application needs to send email. The example file leaves mail credentials blank.
 
-## Module/Addon Package Installation
+## Plugin/Addon Package Installation
 
 Add repositories before installing add-on packages with Composer:
 

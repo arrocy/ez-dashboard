@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="siteNav">
             <ul class="navbar-nav mx-auto gap-lg-2">
                 <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
-                <li class="nav-item"><a class="nav-link" href="#modules">Modules</a></li>
+                <li class="nav-item"><a class="nav-link" href="#plugins">Plugins</a></li>
                 <li class="nav-item"><a class="nav-link" href="#workflow">How it works</a></li>
             </ul>
             <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
@@ -37,14 +37,14 @@
                 <div class="col-lg-5">
                     <span class="welcome-eyebrow"><span class="welcome-eyebrow-dot"></span> A MODULAR ADMIN WORKSPACE</span>
                     <h1 class="display-4 fw-bold lh-sm mt-4 mb-4">Your tools. Your workflow. <span class="welcome-heading-accent">One dashboard.</span></h1>
-                    <p class="lead text-body-secondary mb-4">Arrocy EZ Dashboard brings your day-to-day admin into one clear workspace, with optional modules you can add as your needs grow.</p>
+                    <p class="lead text-body-secondary mb-4">Arrocy EZ Dashboard brings your day-to-day admin into one clear workspace, with optional plugins you can add as your needs grow.</p>
                     <div class="d-flex flex-wrap gap-3">
                         @auth
                             <a class="btn btn-primary btn-lg" href="{{ route('dashboard') }}">Open dashboard <i class="fa-solid fa-arrow-right ms-2"></i></a>
                         @else
                             <a class="btn btn-primary btn-lg" href="{{ route('register') }}">Get started <i class="fa-solid fa-arrow-right ms-2"></i></a>
                         @endauth
-                        <a class="btn btn-outline-secondary btn-lg" href="#modules">Explore the modules</a>
+                        <a class="btn btn-outline-secondary btn-lg" href="#plugins">Explore the plugins</a>
                     </div>
                     <div class="d-flex flex-wrap gap-4 mt-4 small text-body-secondary">
                         <span><i class="fa-solid fa-check text-primary me-2"></i>Start with the essentials</span>
@@ -61,7 +61,7 @@
                             <div class="welcome-sidebar-label">WORKSPACE</div>
                             <div class="welcome-sidebar-link active"><i class="fa-solid fa-chart-pie"></i>Overview</div>
                             <div class="welcome-sidebar-link"><i class="fa-solid fa-users"></i>Users</div>
-                            <div class="welcome-sidebar-label mt-4">ADD-ON MODULES</div>
+                            <div class="welcome-sidebar-label mt-4">ADD-ON PACKAGES</div>
                             <div class="welcome-sidebar-link"><i class="fa-brands fa-whatsapp"></i>WhatsApp</div>
                             <div class="welcome-sidebar-link"><i class="fa-solid fa-address-book"></i>Phonebooks</div>
                             <div class="welcome-sidebar-link"><i class="fa-brands fa-openai"></i>AI Bots</div>
@@ -86,7 +86,7 @@
                                 <div class="col-4">
                                     <div class="welcome-stat">
                                         <span class="welcome-stat-icon welcome-stat-icon-purple"><i class="fa-solid fa-puzzle-piece"></i></span>
-                                        <div class="small text-body-secondary mt-3">Modules</div>
+                                        <div class="small text-body-secondary mt-3">Plugins</div>
                                         <div class="h4 fw-bold mb-0">04 <span class="small fw-normal text-body-secondary">active</span></div>
                                     </div>
                                 </div>
@@ -98,30 +98,30 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="welcome-module-panel">
+                            <div class="welcome-plugin-panel">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <div class="fw-semibold">Your modules</div>
-                                    <span class="small text-primary fw-semibold">Manage modules <i class="fa-solid fa-arrow-right ms-1"></i></span>
+                                    <div class="fw-semibold">Your plugins</div>
+                                    <span class="small text-primary fw-semibold">Manage plugins <i class="fa-solid fa-arrow-right ms-1"></i></span>
                                 </div>
-                                <div class="welcome-module-row">
-                                    <span class="welcome-module-icon text-success"><i class="fa-brands fa-whatsapp"></i></span>
+                                <div class="welcome-plugin-row">
+                                    <span class="welcome-plugin-icon text-success"><i class="fa-brands fa-whatsapp"></i></span>
                                     <span class="flex-grow-1 fw-medium">WhatsApp</span>
-                                    <span class="welcome-module-status"><span></span>Active</span>
+                                    <span class="welcome-plugin-status"><span></span>Active</span>
                                 </div>
-                                <div class="welcome-module-row">
-                                    <span class="welcome-module-icon text-primary"><i class="fa-solid fa-address-book"></i></span>
+                                <div class="welcome-plugin-row">
+                                    <span class="welcome-plugin-icon text-primary"><i class="fa-solid fa-address-book"></i></span>
                                     <span class="flex-grow-1 fw-medium">Phonebooks</span>
-                                    <span class="welcome-module-status"><span></span>Active</span>
+                                    <span class="welcome-plugin-status"><span></span>Active</span>
                                 </div>
-                                <div class="welcome-module-row">
-                                    <span class="welcome-module-icon text-warning"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                                <div class="welcome-plugin-row">
+                                    <span class="welcome-plugin-icon text-warning"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
                                     <span class="flex-grow-1 fw-medium">AI Bots</span>
-                                    <span class="welcome-module-status"><span></span>Active</span>
+                                    <span class="welcome-plugin-status"><span></span>Active</span>
                                 </div>
-                                <div class="welcome-module-row">
-                                    <span class="welcome-module-icon text-info"><i class="fa-solid fa-file-lines"></i></span>
+                                <div class="welcome-plugin-row">
+                                    <span class="welcome-plugin-icon text-info"><i class="fa-solid fa-file-lines"></i></span>
                                     <span class="flex-grow-1 fw-medium">Templates</span>
-                                    <span class="welcome-module-status"><span></span>Active</span>
+                                    <span class="welcome-plugin-status"><span></span>Active</span>
                                 </div>
                             </div>
                         </div>
@@ -168,38 +168,38 @@
         </div>
     </section>
 
-    <section id="modules" class="welcome-modules py-5 py-lg-6">
+    <section id="plugins" class="welcome-plugins py-5 py-lg-6">
         <div class="container py-4">
             <div class="text-center mx-auto mb-5" style="max-width: 44rem">
                 <span class="welcome-section-label">EXTEND YOUR WORKSPACE</span>
-                <h2 class="display-6 fw-bold mt-2">The right modules for the work you do.</h2>
+                <h2 class="display-6 fw-bold mt-2">The right plugins for the work you do.</h2>
                 <p class="text-body-secondary mb-0">Choose from Arrocy add-ons to shape a workspace around your team's needs.</p>
             </div>
             <div class="row g-4">
                 <div class="col-sm-6 col-lg-3">
-                    <article class="welcome-addon-card h-100">
-                        <span class="welcome-addon-icon text-success"><i class="fa-brands fa-whatsapp"></i></span>
+                    <article class="welcome-plugin-card h-100">
+                        <span class="welcome-plugin-icon text-success"><i class="fa-brands fa-whatsapp"></i></span>
                         <h3 class="h5 fw-bold mt-4">WhatsApp</h3>
                         <p class="text-body-secondary mb-0">Bring WhatsApp tools into your admin workspace with a dedicated add-on.</p>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <article class="welcome-addon-card h-100">
-                        <span class="welcome-addon-icon text-primary"><i class="fa-solid fa-address-book"></i></span>
-                        <h3 class="h5 fw-bold mt-4">Phonebook</h3>
+                    <article class="welcome-plugin-card h-100">
+                        <span class="welcome-plugin-icon text-primary"><i class="fa-solid fa-address-book"></i></span>
+                        <h3 class="h5 fw-bold mt-4">Phonebooks</h3>
                         <p class="text-body-secondary mb-0">Keep your contact management close to the rest of your team's workflow.</p>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <article class="welcome-addon-card h-100">
-                        <span class="welcome-addon-icon text-warning"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-                        <h3 class="h5 fw-bold mt-4">AI Bot</h3>
+                    <article class="welcome-plugin-card h-100">
+                        <span class="welcome-plugin-icon text-warning"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <h3 class="h5 fw-bold mt-4">AI Bots</h3>
                         <p class="text-body-secondary mb-0">Extend your setup with AI-powered tools for your platform.</p>
                     </article>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <article class="welcome-addon-card h-100">
-                        <span class="welcome-addon-icon text-info"><i class="fa-solid fa-file-lines"></i></span>
+                    <article class="welcome-plugin-card h-100">
+                        <span class="welcome-plugin-icon text-info"><i class="fa-solid fa-file-lines"></i></span>
                         <h3 class="h5 fw-bold mt-4">Templates</h3>
                         <p class="text-body-secondary mb-0">Add reusable templates to help standardize your team's setup.</p>
                     </article>
@@ -214,7 +214,7 @@
                 <div>
                     <span class="welcome-section-label">READY WHEN YOU ARE</span>
                     <h2 class="h2 fw-bold mt-2 mb-2">Build the workspace that works for you.</h2>
-                    <p class="text-body-secondary mb-0">Start with Arrocy EZ Dashboard and add modules on your terms.</p>
+                    <p class="text-body-secondary mb-0">Start with Arrocy EZ Dashboard and install plugins on your terms.</p>
                 </div>
                 <div class="d-flex flex-wrap gap-3 flex-shrink-0">
                     @auth
@@ -238,7 +238,7 @@
         <span class="small text-body-secondary">&copy; {{ date('Y') }} Arrocy. A flexible admin workspace.</span>
         <div class="d-flex gap-3 small">
             <a class="text-body-secondary text-decoration-none" href="#platform">Platform</a>
-            <a class="text-body-secondary text-decoration-none" href="#modules">Modules</a>
+            <a class="text-body-secondary text-decoration-none" href="#plugins">Plugins</a>
             @auth
                 <a class="text-body-secondary text-decoration-none" href="{{ route('dashboard') }}">Dashboard</a>
             @else
