@@ -8,10 +8,10 @@ Arrocy EZ Dashboard is a Laravel admin panel with a modular package structure. T
 - User and administrator management
 - Application settings and file management
 - Modular add-ons, maintained as Composer packages:
-  - **AI Bot** (`arrocy/ai-bot`)
-  - **Phonebook** (`arrocy/phonebook`)
-  - **Templates** (`arrocy/template`)
-  - **WhatsApp** (`arrocy/whatsapp`)
+  - **AI Bot** (`arrocy/ez-ai-bot`)
+  - **Phonebook** (`arrocy/ez-phonebook`)
+  - **Templates** (`arrocy/ez-template`)
+  - **WhatsApp** (`arrocy/ez-whatsapp`)
 
 The add-on packages are in `arrocy/` and are registered with Laravel through Composer package discovery.
 
