@@ -63,8 +63,8 @@
                             <div class="welcome-sidebar-link"><i class="fa-solid fa-users"></i>Users</div>
                             <div class="welcome-sidebar-label mt-4">ADD-ON MODULES</div>
                             <div class="welcome-sidebar-link"><i class="fa-brands fa-whatsapp"></i>WhatsApp</div>
-                            <div class="welcome-sidebar-link"><i class="fa-solid fa-address-book"></i>Phonebook</div>
-                            <div class="welcome-sidebar-link"><i class="fa-brands fa-openai"></i>AI Bot</div>
+                            <div class="welcome-sidebar-link"><i class="fa-solid fa-address-book"></i>Phonebooks</div>
+                            <div class="welcome-sidebar-link"><i class="fa-brands fa-openai"></i>AI Bots</div>
                             <div class="welcome-sidebar-link"><i class="fa-solid fa-file-lines"></i>Templates</div>
                         </aside>
                         <div class="welcome-dashboard-content">
