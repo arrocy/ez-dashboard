@@ -35,7 +35,7 @@
                     <nav class="nav flex-column ms-3">
                         @foreach ($item['children'] as $child)
                             @if (empty($child['roles']) || Auth::user()->hasRole($child['roles']))
-                            <a class="nav-link {{ request()->routeIs($child['route']) ? 'active' : '' }}" href="{{ route($child['route']) }}" title="{{ $child['label'] }}" aria-label="{{ $child['label'] }}">
+                            <a class="nav-link {{ request()->routeIs($child['route']) ? 'active' : '' }}" href="{{ route($child['route']) }}" title="{{ $child['label'] }}" aria-label="{{ $child['label'] }}" target="{{ $child['target'] ?? '' }}">
                                 <i class="{{ $child['icon'] }}" aria-hidden="true"></i>
                                 <span class="sidebar-label">{{ $child['label'] }}</span>
                             </a>
@@ -44,7 +44,7 @@
                     </nav>
                 </div>
                 @else
-                <a class="nav-link {{ request()->routeIs($item['route']) ? 'active' : '' }}" href="{{ route($item['route']) }}" title="{{ $item['label'] }}" aria-label="{{ $item['label'] }}">
+                <a class="nav-link {{ request()->routeIs($item['route']) ? 'active' : '' }}" href="{{ route($item['route']) }}" title="{{ $item['label'] }}" aria-label="{{ $item['label'] }}" target="{{ $item['target'] ?? '' }}">
                     <i class="{{ $item['icon'] }}" aria-hidden="true"></i>
                     <span class="sidebar-label">{{ $item['label'] }}</span>
                 </a>
