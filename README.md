@@ -12,7 +12,6 @@ Arrocy EZ Dashboard is a Laravel admin panel with a modular package structure. T
   - **Phonebook** (`arrocy/ez-phonebook`)
   - **Templates** (`arrocy/ez-template`)
   - **WhatsApp** (`arrocy/ez-whatsapp`)
-  - **Adminer** (`arrocy/ez-adminer`)
 
 ## Requirements
 
@@ -61,7 +60,6 @@ composer config repositories.ez-ai-bot vcs https://github.com/arrocy/ez-ai-bot
 composer config repositories.ez-phonebook vcs https://github.com/arrocy/ez-phonebook
 composer config repositories.ez-template vcs https://github.com/arrocy/ez-template
 composer config repositories.ez-whatsapp vcs https://github.com/arrocy/ez-whatsapp
-composer config repositories.ez-adminer vcs https://github.com/arrocy/ez-adminer
 ```
 
 Install plugins with Composer:
@@ -71,7 +69,6 @@ composer require arrocy/ez-ai-bot:dev-main
 composer require arrocy/ez-phonebook:dev-main
 composer require arrocy/ez-template:dev-main
 composer require arrocy/ez-whatsapp:dev-main
-composer require arrocy/ez-adminer:dev-main
 ```
 
 Migrate the database for the plugins:
