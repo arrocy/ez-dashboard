@@ -1,19 +1,18 @@
 # Arrocy EZ Dashboard
 
-Arrocy EZ Dashboard is a Laravel admin panel with a modular package structure. The core dashboard manages users, settings, and files, while Arrocy add-on packages provide product-specific capabilities.
+Arrocy EZ Dashboard is a Laravel admin panel with a modular package structure. The core dashboard manages users, settings, and files, while Arrocy plugins provide product-specific capabilities.
 
 ## Features
 
 - Authentication, registration, password reset, and email verification
 - User and administrator management
 - Application settings and file management
-- Modular add-ons, maintained as Composer packages:
+- Modular plugins, maintained as Composer packages:
   - **AI Bot** (`arrocy/ez-ai-bot`)
   - **Phonebook** (`arrocy/ez-phonebook`)
   - **Templates** (`arrocy/ez-template`)
   - **WhatsApp** (`arrocy/ez-whatsapp`)
-
-The add-on packages are in `arrocy/` and are registered with Laravel through Composer package discovery.
+  - **Adminer** (`arrocy/ez-adminer`)
 
 ## Requirements
 
@@ -53,30 +52,38 @@ There is no browser-based installer. Configure the application and database from
 
 5. Configure `MAIL_*` values in `.env` if the application needs to send email. The example file leaves mail credentials blank.
 
-## Plugin/Addon Package Installation
+## Plugin/Addon Installation
 
-Add repositories before installing add-on packages with Composer:
+Add repositories before installing plugins with Composer:
 
 ```sh
 composer config repositories.ez-ai-bot vcs https://github.com/arrocy/ez-ai-bot
 composer config repositories.ez-phonebook vcs https://github.com/arrocy/ez-phonebook
 composer config repositories.ez-template vcs https://github.com/arrocy/ez-template
 composer config repositories.ez-whatsapp vcs https://github.com/arrocy/ez-whatsapp
+composer config repositories.ez-adminer vcs https://github.com/arrocy/ez-adminer
 ```
 
-Install add-on packages with Composer:
+Install plugins with Composer:
 
 ```sh
 composer require arrocy/ez-ai-bot:dev-main
 composer require arrocy/ez-phonebook:dev-main
 composer require arrocy/ez-template:dev-main
 composer require arrocy/ez-whatsapp:dev-main
+composer require arrocy/ez-adminer:dev-main
 ```
 
-Migrate the database for the add-on packages:
+Migrate the database for the plugins:
 
 ```sh
 php artisan migrate
+```
+
+## Create new Arrocy Plugin/Addon
+
+```sh
+php artisan arrocy:plugin plugin-name
 ```
 
 ## Project structure

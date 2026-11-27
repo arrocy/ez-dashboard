@@ -46,42 +46,42 @@ class CreateArrocyPlugin extends Command
         }
 
         $directories = [
-            'src\\Http\\Controllers',
-            'src\\Models',
-            'database\\migrations',
-            'database\\seeders',
-            'resources\\views',
+            'src/Http/Controllers',
+            'src/Models',
+            'database/migrations',
+            'database/seeders',
+            'resources/views',
             'routes',
             'config',
             'lang',
         ];
 
         foreach ($directories as $directory) {
-            File::makeDirectory("{$pluginPath}\\{$directory}", 0755, true, true);
+            File::makeDirectory("{$pluginPath}/{$directory}", 0755, true, true);
         }
 
         $files = [
-            "{$pluginPath}\\composer.json" => $this->getComposerStub($pluginName, $className),
-            "{$pluginPath}\\config\\{$cleanName}.php" => $this->getConfigStub(),
-            "{$pluginPath}\\src\\{$className}ServiceProvider.php" => $this->getServiceProviderStub($cleanName, $className),
-            "{$pluginPath}\\src\\Models\\{$className}.php" => $this->getModelStub($tableName, $className),
-            "{$pluginPath}\\src\\Http\\Controllers\\{$className}Controller.php" => $this->getControllerStub(
+            "{$pluginPath}/composer.json" => $this->getComposerStub($pluginName, $className),
+            "{$pluginPath}/config/{$cleanName}.php" => $this->getConfigStub(),
+            "{$pluginPath}/src/{$className}ServiceProvider.php" => $this->getServiceProviderStub($cleanName, $className),
+            "{$pluginPath}/src/Models/{$className}.php" => $this->getModelStub($tableName, $className),
+            "{$pluginPath}/src/Http/Controllers/{$className}Controller.php" => $this->getControllerStub(
                 $cleanName,
                 $className,
                 $recordName,
                 $recordsName,
             ),
-            "{$pluginPath}\\database\\migrations\\0001_01_03_000010_create_{$tableName}_table.php" => $this->getMigrationStub($tableName),
-            "{$pluginPath}\\database\\seeders\\DatabaseSeeder.php" => $this->getDatabaseSeederStub($className),
-            "{$pluginPath}\\routes\\web.php" => $this->getWebRoutesStub($cleanName, $className, $recordName),
-            "{$pluginPath}\\routes\\api.php" => $this->getApiRoutesStub($cleanName),
-            "{$pluginPath}\\resources\\views\\index.blade.php" => $this->getIndexStub(
+            "{$pluginPath}/database/migrations/0001_01_03_000010_create_{$tableName}_table.php" => $this->getMigrationStub($tableName),
+            "{$pluginPath}/database/seeders/DatabaseSeeder.php" => $this->getDatabaseSeederStub($className),
+            "{$pluginPath}/routes/web.php" => $this->getWebRoutesStub($cleanName, $className, $recordName),
+            "{$pluginPath}/routes/api.php" => $this->getApiRoutesStub($cleanName),
+            "{$pluginPath}/resources/views/index.blade.php" => $this->getIndexStub(
                 $cleanName,
                 $className,
                 $recordName,
                 $recordsName,
             ),
-            "{$pluginPath}\\resources\\views\\edit.blade.php" => $this->getEditStub(
+            "{$pluginPath}/resources/views/edit.blade.php" => $this->getEditStub(
                 $cleanName,
                 $className,
                 $recordName,
